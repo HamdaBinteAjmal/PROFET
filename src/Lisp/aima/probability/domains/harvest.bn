@@ -1,0 +1,40 @@
+
+#S(BN :NODES
+      (#2=#S(LINEAR-GAUSSIAN-BNODE :NAME HARVEST :INDEX 0 :PARENTS NIL
+                                   :CHILDREN
+                                   (#1=#S(LINEAR-GAUSSIAN-BNODE
+                                          :NAME COST
+                                          :INDEX 2
+                                          :PARENTS
+                                          (#3=#S(TABULATED-BNODE
+                                                 :NAME SUBSIDY
+                                                 :INDEX 1
+                                                 :PARENTS NIL
+                                                 :CHILDREN (#1#)
+                                                 :ARITY 2
+                                                 :VALUE-NAMES
+                                                 (TRUE FALSE)
+                                                 :CPT
+                                                 #0A #(0.5d0 0.5d0))
+                                           #2#)
+                                          :CHILDREN
+                                          (#4=#S(PROBIT-BNODE
+                                                 :NAME BUYS
+                                                 :INDEX 3
+                                                 :PARENTS (#1#)
+                                                 :CHILDREN NIL
+                                                 :ARITY 2
+                                                 :VALUE-NAMES
+                                                 (TRUE FALSE)
+                                                 :COEFFICIENTS-TABLE
+                                                 #0A (-1.0)
+                                                 :MU-TABLE #0A 6.0
+                                                 :SIGMA-TABLE #0A 1.0))
+                                          :COEFFICIENTS-TABLE
+                                          #((3.0) (5.0))
+                                          :OFFSET-TABLE #(-5.0 -3.0)
+                                          :SIGMA-TABLE #(1.0 2.0)))
+                                   :COEFFICIENTS-TABLE #0A NIL
+                                   :OFFSET-TABLE #0A 6.0
+                                   :SIGMA-TABLE #0A 1.0)
+       #3# #1# #4#))

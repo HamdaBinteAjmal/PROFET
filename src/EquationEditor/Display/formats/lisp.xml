@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Syntax>
+  <name AutoBrackets="false">Lisp</name>
+  
+  <initial>
+      <output1></output1> 
+      <output2></output2>
+  </initial>
+  <Variable>
+      <output1></output1>
+      <output2> </output2>
+  </Variable>
+  <RealNumber>
+      <output1></output1>
+      <output2> </output2>
+  </RealNumber>
+   <Text>
+      <output1></output1>
+      <output2> </output2>
+  </Text>
+  
+  <!--  Nary Operators   --> 
+  <Add brackets = "false">
+		<initial>( </initial>
+      <output>+ </output>
+		<final>)</final>
+  </Add>
+    <Multiply brackets = "false">
+		<initial>( </initial>
+       <output>* </output>
+		<final>)</final>
+   </Multiply>
+   <Multiply2  brackets = "false">
+		<initial>( </initial>
+       <output>* </output>
+		<final>)</final>
+   </Multiply2>
+   <Equals brackets = "false">
+		<initial>( </initial>
+       <output>= </output>
+		<final>)</final>
+   </Equals>
+   <Comma>
+       <output></output>
+   </Comma>  
+    
+    <!--  Functions   --> 
+    <UMinus brackets = "false">
+		<initial>(</initial>
+        <output1>- </output1>
+        <output2></output2>
+		<final>)</final>
+    </UMinus>
+    <Factorial brackets="false">
+		<initial>(</initial>
+        <output1>factorial </output1>
+        <output2></output2>
+		<final>)</final>
+    </Factorial>
+    <NaturalLogarithm brackets="false">
+		<initial>(</initial>
+        <output1>log </output1>
+        <output2></output2>
+		<final>)</final>
+    </NaturalLogarithm>
+    <Logarithm brackets="false">
+		<initial>(</initial>
+        <output1>log </output1>
+        <output2></output2>
+		<final>10)</final>
+    </Logarithm>
+    <Sine brackets="false">
+		<initial>(</initial>
+        <output1>sin </output1> 
+        <output2></output2>
+		<final>)</final>
+    </Sine>
+    <Cosine brackets="false">
+		<initial>(</initial>
+        <output1>cos </output1>
+        <output2></output2>
+		<final>)</final>
+    </Cosine>
+    <Tangent brackets="false">
+		<initial>(</initial>
+        <output1>tan </output1>
+        <output2></output2>
+		<final>)</final>
+    </Tangent>
+    <ArcSine brackets="false">
+		<initial>(</initial>
+        <output1>asin </output1>
+        <output2></output2>
+		<final>)</final>
+    </ArcSine>
+    <ArcCosine brackets="false">
+		<initial>(</initial>
+        <output1>acos </output1>
+        <output2></output2>
+		<final>)</final>
+    </ArcCosine>
+    <ArcTangent brackets="false">
+        <initial>(</initial>
+        <output1>atan </output1>
+        <output2></output2>
+		<final>)</final>
+    </ArcTangent>
+    <SineH brackets="false">
+        <initial>(</initial>
+        <output1>sinh </output1>
+        <output2></output2>
+		<final>)</final>
+    </SineH >
+    <CosineH brackets="false">
+        <initial>(</initial>
+        <output1>cosh </output1>
+        <output2></output2>
+		<final>)</final>
+    </CosineH>
+    <TanH brackets="false">
+        <initial>(</initial>
+        <output1>tanh </output1>
+        <output2></output2>
+		<final>)</final>
+    </TanH>
+    <ArcSineH brackets="false">
+        <initial>(</initial>
+        <output1>asinh </output1>
+        <output2></output2>
+		<final>)</final>
+    </ArcSineH>
+    <ArcCosineH brackets="false">
+        <initial>(</initial>
+        <output1>acosh </output1>
+        <output2></output2>
+		<final>)</final>
+    </ArcCosineH>
+    <ArcTanH brackets="false">
+        <initial>(</initial>
+        <output1>atanh </output1>
+        <output2></output2>
+		<final>)</final>
+    </ArcTanH>
+    <SquareRoot brackets="false">
+        <initial>(</initial>
+        <output1>sqrt </output1>
+        <output2></output2>
+		<final>)</final>
+    </SquareRoot>
+    <Exp brackets="false">
+        <initial>(</initial>
+        <output1>exp </output1>
+        <output2></output2>
+		<final>)</final>
+    </Exp>
+    <Max brackets="false">
+        <initial>(</initial>
+        <output1>max </output1>
+        <output2></output2>
+		<final>)</final>
+    </Max>
+    <Min brackets="false">
+        <initial>(</initial>
+        <output1>min </output1>
+        <output2></output2>
+		<final>)</final>
+    </Min>
+  
+    
+    <!--  Binary Operators   --> 
+ 
+    <Subtract brackets="false">
+		<initial>(</initial>
+        <output1>- </output1>
+        <output2> </output2>
+        <output3></output3>
+		<final>)</final>
+    </Subtract>
+    <Divide brackets = "false">
+		<initial>(</initial>
+        <output1>/ </output1>
+        <output2> </output2>
+        <output3></output3>
+		<final>)</final>
+    </Divide> 
+    <Divide2 brackets = "false">
+		<initial>(</initial>
+        <output1>/ </output1>
+        <output2> </output2>
+        <output3></output3>
+		<final>)</final>
+    </Divide2>      
+    <Power brackets = "false">
+		<initial>(</initial>
+        <output1>expt </output1>
+        <output2> </output2>
+        <output3></output3> 
+		<final>)</final>		
+    </Power>
+    <Subscript brackets = "false">		
+        <output1></output1>
+        <output2>_</output2>
+        <output3></output3>		
+    </Subscript>  
+    <NthRoot brackets = "false">
+		<initial>(</initial>
+        <output1>expt </output1>
+        <output2> 1/</output2>  
+        <output3></output3>
+		<final>)</final>
+    </NthRoot>
+    <Function brackets = "false">
+        <output1> </output1>
+        <output2> </output2>
+        <output3> </output3>
+    </Function>
+   
+    <!--  Nary Functions   --> 
+   
+    <Differential brackets = "false">
+		<output1>diff(</output1>
+        <output2>,</output2>
+        <output3>) </output3>
+    </Differential>
+    <PartialDifferential brackets = "false">
+        <output1>diff(</output1>
+        <output2>,</output2>
+        <output3>) </output3>
+    </PartialDifferential>
+    <Sum brackets = "false">
+		<initial>(</initial>
+        <output1>summation </output1>
+        <output2></output2>
+        <output3></output3>
+        <output4></output4>
+        <output5></output5>
+		<final> )</final>
+    </Sum>
+    <Product brackets = "false">
+		<initial>(</initial>
+        <output1>product </output1>
+        <output2></output2>
+        <output3></output3>
+        <output4></output4>
+        <output5></output5>
+		<final> )</final>
+    </Product>
+    <Limit>
+        <output1>limit(</output1>
+        <output2>,</output2>
+        <output3>=</output3>
+        <output4>)</output4>
+    </Limit>
+    
+    <!--  Matrix   --> 
+    
+    <!--  Grouping   --> 
+    <BracketsRnd>
+        <output1>(</output1>
+        <output2>)</output2>
+    </BracketsRnd>
+    <BracketsCurl>
+        <output1>{</output1>
+        <output2>}</output2>
+    </BracketsCurl>
+    <BracketsSq>
+        <output1>[</output1>
+        <output2>]</output2>
+    </BracketsSq>
+    <Abs brackets = "false">
+		<initial>( </initial>
+        <output1>abs </output1>
+        <output2></output2>
+		<final>)</final>
+    </Abs>
+    
+    
+    <!--  Symbols  --> 
+    <Infinity>
+        <output>infinity</output>
+    </Infinity>
+
+    
+    <Γ>
+        <output> Gamma </output>
+    </Γ>
+    <Δ>
+        <output> Delta </output>
+    </Δ>
+    <Θ>
+        <output> Theta </output>
+    </Θ>
+    <Λ>
+        <output> Lambda </output>
+    </Λ>
+    <Ξ>
+        <output> Xi </output>
+    </Ξ>
+    <Π>
+        <output> PI </output>
+    </Π>
+    <Σ>
+        <output> Sigma </output>
+    </Σ>
+    <Υ>
+        <output> Upsilon </output>
+    </Υ>
+    <Φ>
+        <output> Phi </output>
+    </Φ>
+    <Ψ>
+        <output> Psi </output>
+    </Ψ>
+    <Ω>
+        <output> Omega </output>
+    </Ω>
+    
+    
+    <α>
+        <output> alpha </output>
+    </α>
+    <β>
+        <output> beta </output>
+    </β>
+    <γ>
+        <output> gamma </output>
+    </γ>
+    <δ>
+        <output> delta </output>
+    </δ>
+    <ε>
+        <output> epsilon </output>
+    </ε>
+    <ζ>
+        <output> zeta </output>
+    </ζ>
+    <η>
+        <output> eta </output>
+    </η>
+    <θ>
+        <output> theta </output>
+    </θ>
+    <ι>
+        <output> iota </output>
+    </ι>
+    <κ>
+        <output> kappa </output>
+    </κ>
+    <λ>
+        <output> lambda </output>
+    </λ>
+    <μ>
+        <output> mu </output>
+    </μ>
+    <ν>
+        <output> nu </output>
+    </ν>
+    <ξ>
+        <output> xi </output>
+    </ξ>
+    <π>
+        <output> Pi </output>
+    </π>
+    <ρ>
+        <output> rho </output>
+    </ρ>
+    <σ>
+        <output> sigma </output>
+    </σ>
+    <τ>
+        <output> tau </output>
+    </τ>
+    <υ>
+        <output> upsilon </output>
+    </υ>
+    <φ>
+        <output> phi </output>
+    </φ>
+    <χ>
+        <output> chi </output>
+    </χ>
+    <ψ>
+        <output> psi </output>
+    </ψ> 
+    <ω>
+        <output> omega </output>
+    </ω>
+    
+</Syntax>

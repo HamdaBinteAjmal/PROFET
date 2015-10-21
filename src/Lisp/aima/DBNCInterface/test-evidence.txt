@@ -1,0 +1,6 @@
+umbrella_0	rain_0	nil
+0	nil	
+1	nil	
+nil	nil	
+1	nil	
+1	0	

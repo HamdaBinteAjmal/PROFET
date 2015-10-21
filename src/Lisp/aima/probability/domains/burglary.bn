@@ -1,0 +1,73 @@
+
+#S(BN :NODES
+      (#2=#S(TABULATED-BNODE :NAME EARTHQUAKE :INDEX 0 :PARENTS NIL
+                             :CHILDREN
+                             (#1=#S(TABULATED-BNODE
+                                    :NAME ALARM
+                                    :INDEX 2
+                                    :PARENTS
+                                    (#3=#S(TABULATED-BNODE
+                                           :NAME BURGLARY
+                                           :INDEX 1
+                                           :PARENTS NIL
+                                           :CHILDREN (#1#)
+                                           :ARITY 2
+                                           :VALUE-NAMES (FALSE TRUE)
+                                           :CPT
+                                           #0A #(0.9990000128746033d0
+                                                 0.0010000000474974513d0))
+                                     #2#)
+                                    :CHILDREN
+                                    (#5=#S(TABULATED-BNODE
+                                           :NAME JOHNCALLS
+                                           :INDEX 4
+                                           :PARENTS (#1#)
+                                           :CHILDREN NIL
+                                           :ARITY 2
+                                           :VALUE-NAMES (FALSE TRUE)
+                                           :CPT
+                                           #(#(0.949999988079071d0
+                                               0.05000000074505806d0)
+                                             #(0.10000000149011612d0
+                                               0.8999999761581421d0)))
+                                     #4=#S(TABULATED-BNODE
+                                           :NAME MARYCALLS
+                                           :INDEX 3
+                                           :PARENTS (#1#)
+                                           :CHILDREN NIL
+                                           :ARITY 2
+                                           :VALUE-NAMES (FALSE TRUE)
+                                           :CPT
+                                           #(#(0.9900000095367432d0
+                                               0.009999999776482582d0)
+                                             #(0.30000001192092896d0
+                                               0.699999988079071d0))))
+                                    :ARITY 2
+                                    :VALUE-NAMES (FALSE TRUE)
+                                    :CPT
+                                    #2A((#(0.9990000128746033d0
+                                           0.0010000000474974513d0)
+                                         #(0.7099999785423279d0
+                                           0.28999999165534973d0))
+                                        (#(0.05999999865889549d0
+                                           0.9399999976158142d0)
+                                         #(0.05000000074505806d0
+                                           0.949999988079071d0)))))
+                             :ARITY 2 :VALUE-NAMES (FALSE TRUE)
+                             :CPT
+                             #0A #(0.9980000257492065d0
+                                   0.0020000000949949026d0))
+       #3# #1# #4# #5#))              0.9900000095367432d0))))
+                                                    :CPT
+                                                    #2A((#(0.949999988079071d0
+                                                           0.05000000074505806d0)
+                                                         #(0.9399999976158142d0
+                                                           0.05999999865889549d0))
+                                                        (#(0.28999999165534973d0
+                                                           0.7099999785423279d0)
+                                                         #(0.0010000000474974513d0
+                                                           0.9990000128746033d0)))))
+                             :CPT
+                             #0A #(0.0020000000949949026d0
+                                   0.9980000257492065d0))
+       #3# #1# #4# #5#))
