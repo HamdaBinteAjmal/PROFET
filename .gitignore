@@ -1,0 +1,10 @@
+/build/
+*.class
+
+*.dot
+
+*.dbn
+
+*.csv
+
+Results

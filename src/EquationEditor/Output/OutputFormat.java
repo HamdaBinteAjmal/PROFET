@@ -532,7 +532,7 @@ public class OutputFormat {
         eq = new EquationInfo();
         MathObject RHS = DivideRLHS(expressionTree);
         String preFix = GetPreFixString(RHS);
-        JOptionPane.showMessageDialog(null, preFix);
+       // JOptionPane.showMessageDialog(null, preFix);
         eq.SetPreFix(preFix);
         
         MathObject start = expressionTree;
