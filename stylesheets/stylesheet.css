@@ -15,6 +15,14 @@ a {
   a:hover {
     text-decoration: underline; }
 
+.byline
+{
+	color = #993300;
+	align = center;
+	font-family: "Calibri";
+	font-size: 14px;
+}
+
 .btn {
   display: inline-block;
   margin-bottom: 1rem;
@@ -53,6 +61,13 @@ a {
     .btn + .btn {
       margin-top: 1rem;
       margin-left: 0; } }
+.logo {
+max-width: 400px;
+align: center;
+} 
+  .logo img {
+    
+    }
 
 .page-header {
   color: #fff;
