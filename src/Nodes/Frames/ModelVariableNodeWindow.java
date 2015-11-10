@@ -93,7 +93,7 @@ public class ModelVariableNodeWindow extends javax.swing.JPanel {
 
         jTextFieldInitialValue.setText("jTextField1");
 
-        jCheckBoxEvidenceNode.setText("Add a corresponding evidence Node");
+        jCheckBoxEvidenceNode.setText("Add a corresponding evidence node");
         jCheckBoxEvidenceNode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxEvidenceNodeActionPerformed(evt);

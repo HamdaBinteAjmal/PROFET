@@ -96,7 +96,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxEvidenceNode">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add a corresponding evidence Node"/>
+        <Property name="text" type="java.lang.String" value="Add a corresponding evidence node"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxEvidenceNodeActionPerformed"/>

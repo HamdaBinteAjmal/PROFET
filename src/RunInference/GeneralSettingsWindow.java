@@ -143,7 +143,7 @@ public class GeneralSettingsWindow {
         setPreferredSize(new java.awt.Dimension(800, 560));
 
         buttonGroupSetting.add(FixedTimestep);
-        FixedTimestep.setText("Perform fixed time step Particle Filtering inference on the DBN incorporating a first-order Euler solver");
+        FixedTimestep.setText("Perform Standard Fixed Time Step Particle Filtering");
         FixedTimestep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FixedTimestepActionPerformed(evt);
@@ -151,7 +151,7 @@ public class GeneralSettingsWindow {
         });
 
         buttonGroupSetting.add(AdaptiveTimestep);
-        AdaptiveTimestep.setText("Perform Adaptive-time Particle Filtering inference on the DBN incorporating a first-order Euler solver");
+        AdaptiveTimestep.setText("Perform Adaptive-Time Particle Filtering");
         AdaptiveTimestep.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AdaptiveTimestepActionPerformed(evt);
@@ -211,7 +211,7 @@ public class GeneralSettingsWindow {
                                         .addComponent(jTextFieldTimespan, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jTextFieldNumberOfSamples, javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jTextFieldStepSize, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addContainerGap(399, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

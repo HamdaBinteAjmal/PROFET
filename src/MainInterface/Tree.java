@@ -587,7 +587,7 @@ public class Tree extends JPanel{
             
             if (!enable)
             {
-                JOptionPane.showMessageDialog(this, "Can not set tolerance for Fixed Timestep Inference", "Tolerance Setting", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Can not set tolerance for standard fixed time step Particle Filtering", "Tolerance Setting", JOptionPane.INFORMATION_MESSAGE);
    
             }
             else
