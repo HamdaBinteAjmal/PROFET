@@ -24,12 +24,18 @@
  */
 package Graphviz;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * <dl>
@@ -78,7 +84,7 @@ public class GraphViz
     */
    //private static String DOT = "/usr/bin/dot";	// Linux
    //This is hardcoded and needs to be fixed, either needs to ask user or something 
-   private static String DOT = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";	// Windows
+   private static String DOT = "";	// Windows
 
    /**
     * The source of the graph written in dot language.
@@ -94,8 +100,32 @@ public class GraphViz
        // 
         TEMP_DIR = TEMP_DIR.replace("\\", "/");
         TEMP_DIR = TEMP_DIR + "/Results/Temp";
+        String path = FindSerializedPath();
+        if (!path.equals(""))
+        {
+            DOT = path;
+        }
+        else
+        {
+            SetPath();
+        }
    }
-
+   private void SetPath()
+   {
+       
+       if(OSValidator.isWindows())
+       {
+           DOT = "C:\\Program Files (x86)\\Graphviz2.38\\bin\\dot.exe";
+       }
+       else if (OSValidator.isUnix())
+       {
+           DOT = "/usr/bin/dot";
+       }
+       else if (OSValidator.isMac())
+       {
+           DOT = "/usr/local/graphviz-2.38/bin/dot";
+       }
+   }
    /**
     * Returns the graph's source description in dot language.
     * @return Source of the graph in dot language.
@@ -290,9 +320,73 @@ public class GraphViz
 	   
 	   this.graph = sb;
    }
+   private static String GetDotAddressFolderPath()
+   {
+        String dotAddress =  System.getProperty("user.dir");
+       dotAddress = dotAddress.replace("\\", "/");
+      
+       dotAddress = dotAddress + "/Results/Graphviz/Address.txt";
+       return dotAddress;
+   }
    public static void ResetDOTInstallationPath(String newPath)
    {
-       DOT = newPath; //ALSO SERIALIZE FOR FUTURE
+       
+       DOT = newPath; //ALSO SERIALIZE FOR FUTURE TEMP_DIR = System.getProperty("user.dir");
+       // 
+       SerializePath(newPath);       
+      
+
+   }
+   private static String FindSerializedPath()
+   {
+       File file = new File(GetDotAddressFolderPath());
+       String path = "";
+       if (file.exists()) 
+       {
+       
+           try {
+               BufferedReader br = new BufferedReader(new FileReader(file));
+               path = br.readLine();
+               
+           } catch (FileNotFoundException ex) {
+               Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+           } catch (IOException ex) {
+               Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+           }
+           
+       }
+       return path;    
+       
+   }
+   private static void SerializePath(String newPath)
+   {
+        File file = new File(GetDotAddressFolderPath());
+       if (!file.exists()) 
+       {
+           try 
+           {
+               file.getParentFile().mkdirs();
+               file.createNewFile();
+           }
+           catch (IOException ex)
+           {
+               Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+           }
+       }
+       FileWriter fw;
+       try 
+       {
+           fw = new FileWriter(file.getAbsoluteFile());      
+           BufferedWriter bw = new BufferedWriter(fw);
+           bw.write(newPath);
+           bw.close();
+                         
+       } 
+       catch (IOException ex) 
+       {
+           Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+       }
+  
    }
 } // end of class GraphViz
 

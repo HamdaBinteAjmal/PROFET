@@ -62,6 +62,10 @@ public class LispConnector
             String path = GetFullPath("aima/defpackage.lisp");
             execute("(load " + "\"" + path + "\")");
             execute("(in-package :aima)");
+            
+            path = GetFullPath("aima/probability/domains/edit-nets.lisp");
+            execute("(load " + "\"" + path + "\")");
+            
             path = GetFullPath("aima/aima.lisp");
             execute("(load " + "\"" + path + "\")");        
             execute("(aima-load-binary 'all)");

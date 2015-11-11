@@ -372,18 +372,7 @@
                  '(arbitrary-continuous-bnode arbitrary-discrete-bnode))
          (format STR "color=gray70 fontcolor=cadetblue4 fontsize=21"))
         (T (format STR "color=grey69 fontcolor=black fontsize=21")))
-      ;;(when tooltips
-        ;;(format STR " tooltip=\"~A\""
-          ;;      (cl-ppcre:regex-replace-all 
-            ;;     "\"" 
-              ;;   (cl-ppcre:regex-replace-all 
-                ;;  (format NIL "~%") 
-                  ;;(format NIL "Time 0:~%~A~%~%Time 1:~%~A"
-                    ;;      (display-node (bnode-by-name 
-                      ;;                   (subscript (unsubscript (bnode-name bnode)) 0) dbn))
-                        ;;  (display-node bnode))
-                  ;;"&#13;&#10;")
-                 ;;"\\\"")))
+      
       (format STR " fontname=Helvetica];~%"))
     (loop for parent in (mapcar #'bnode-name (bnode-parents bnode)) do
          (format STR "~A -> ~A [~A];~%" 
