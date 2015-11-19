@@ -227,6 +227,7 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         jToolBarEdit2 = new javax.swing.JToolBar();
         jButtonUndo = new javax.swing.JButton();
         jButtonRedo = new javax.swing.JButton();
+        jButtonCopy = new javax.swing.JButton();
         jButtonCut = new javax.swing.JButton();
         jButtonPaste = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
@@ -321,7 +322,7 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         jToolBarEdit2.setPreferredSize(new java.awt.Dimension(600, 40));
 
         jButtonUndo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EquationEditor/Display/Images/undo_24_h.png"))); // NOI18N
-        jButtonUndo.setToolTipText("");
+        jButtonUndo.setToolTipText("Undo");
         jButtonUndo.setFocusable(false);
         jButtonUndo.setMaximumSize(new java.awt.Dimension(24, 24));
         jButtonUndo.setMinimumSize(new java.awt.Dimension(24, 24));
@@ -341,7 +342,7 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         jToolBarEdit2.add(jButtonUndo);
 
         jButtonRedo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EquationEditor/Display/Images/redo_24_h.png"))); // NOI18N
-        jButtonRedo.setToolTipText("");
+        jButtonRedo.setToolTipText("Redo");
         jButtonRedo.setFocusable(false);
         jButtonRedo.setMaximumSize(new java.awt.Dimension(24, 24));
         jButtonRedo.setMinimumSize(new java.awt.Dimension(24, 24));
@@ -355,8 +356,33 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         });
         jToolBarEdit2.add(jButtonRedo);
 
+        jButtonCopy.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EquationEditor/Display/Images/copy_clipboard_24_h.png"))); // NOI18N
+        jButtonCopy.setToolTipText("Copy");
+        jButtonCopy.setBorder(javax.swing.BorderFactory.createEmptyBorder(4, 4, 4, 4));
+        jButtonCopy.setFocusable(false);
+        jButtonCopy.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonCopy.setName("CopyButton"); // NOI18N
+        jButtonCopy.setOpaque(false);
+        jButtonCopy.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonCopy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonCopyMouseClicked(evt);
+            }
+        });
+        jButtonCopy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCopyActionPerformed(evt);
+            }
+        });
+        jButtonCopy.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jButtonCopyKeyPressed(evt);
+            }
+        });
+        jToolBarEdit2.add(jButtonCopy);
+
         jButtonCut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EquationEditor/Display/Images/cut_clipboard_24_h.png"))); // NOI18N
-        jButtonCut.setToolTipText("");
+        jButtonCut.setToolTipText("Cut");
         jButtonCut.setFocusable(false);
         jButtonCut.setMaximumSize(new java.awt.Dimension(24, 24));
         jButtonCut.setMinimumSize(new java.awt.Dimension(24, 24));
@@ -371,7 +397,7 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         jToolBarEdit2.add(jButtonCut);
 
         jButtonPaste.setIcon(new javax.swing.ImageIcon(getClass().getResource("/EquationEditor/Display/Images/paste_clipboard_24_h.png"))); // NOI18N
-        jButtonPaste.setToolTipText("");
+        jButtonPaste.setToolTipText("Paste");
         jButtonPaste.setFocusable(false);
         jButtonPaste.setMaximumSize(new java.awt.Dimension(24, 24));
         jButtonPaste.setMinimumSize(new java.awt.Dimension(24, 24));
@@ -1090,14 +1116,6 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jButtonCutMouseClicked
 
-    private void jButtonPasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPasteMouseClicked
-        addComponent.paste();
-    }//GEN-LAST:event_jButtonPasteMouseClicked
-
-    private void jButtonPasteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButtonPasteFocusGained
-
-    }//GEN-LAST:event_jButtonPasteFocusGained
-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton11ActionPerformed
@@ -1204,6 +1222,32 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         SaveEquation();
         NewEquation();
     }//GEN-LAST:event_jButtonSaveActionPerformed
+
+    private void jButtonCopyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCopyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCopyActionPerformed
+
+    private void jButtonCopyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCopyMouseClicked
+        // TODO add your handling code here:
+          try {
+            addComponent.copy(jPanelWorkspace, buildTree);
+        } catch (ParseException ex) {
+            JOptionPane.showMessageDialog(null, langMan.readLangFile("Copy") + ex.getMessage(), "DragMath", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jButtonCopyMouseClicked
+
+    private void jButtonCopyKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jButtonCopyKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCopyKeyPressed
+
+    private void jButtonPasteFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jButtonPasteFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonPasteFocusGained
+
+    private void jButtonPasteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPasteMouseClicked
+        // TODO add your handling code here:
+        addComponent.paste();
+    }//GEN-LAST:event_jButtonPasteMouseClicked
 
 public void changeTrigButtons() {
         if (jCheckBoxInverse.isSelected()) {
@@ -1578,6 +1622,7 @@ public void changeTrigButtons() {
     private javax.swing.JButton jButtonAddEquation;
     private javax.swing.JButton jButtonClear;
     private javax.swing.JButton jButtonClear3;
+    private javax.swing.JButton jButtonCopy;
     private javax.swing.JButton jButtonCos;
     private javax.swing.JButton jButtonCut;
     private javax.swing.JButton jButtonMatrix1;

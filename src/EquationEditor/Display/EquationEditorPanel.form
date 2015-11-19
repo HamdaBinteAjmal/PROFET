@@ -70,7 +70,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/EquationEditor/Display/Images/undo_24_h.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Undo"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[24, 24]"/>
@@ -94,7 +94,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/EquationEditor/Display/Images/redo_24_h.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Redo"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[24, 24]"/>
@@ -112,12 +112,35 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonRedoMouseClicked"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="jButtonCopy">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/EquationEditor/Display/Images/copy_clipboard_24_h.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Copy"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+                <EmptyBorder bottom="4" left="4" right="4" top="4"/>
+              </Border>
+            </Property>
+            <Property name="focusable" type="boolean" value="false"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+            <Property name="name" type="java.lang.String" value="CopyButton" noResource="true"/>
+            <Property name="opaque" type="boolean" value="false"/>
+            <Property name="verticalTextPosition" type="int" value="3"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonCopyMouseClicked"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCopyActionPerformed"/>
+            <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jButtonCopyKeyPressed"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JButton" name="jButtonCut">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/EquationEditor/Display/Images/cut_clipboard_24_h.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Cut"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[24, 24]"/>
@@ -140,7 +163,7 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/EquationEditor/Display/Images/paste_clipboard_24_h.png"/>
             </Property>
-            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="toolTipText" type="java.lang.String" value="Paste"/>
             <Property name="focusable" type="boolean" value="false"/>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[24, 24]"/>
