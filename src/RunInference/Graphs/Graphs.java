@@ -98,7 +98,7 @@ public class Graphs extends javax.swing.JPanel {
         @Override
     public String toString()
     {
-        return "Plot Predicated Data";
+        return "Plot Predicted Data";
     }
 
     private void ReadCSVHeader()
