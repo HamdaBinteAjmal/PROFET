@@ -18,22 +18,16 @@ import java.util.logging.Logger;
 
 public class GraphVizConnector
 {
-   /**
-    * The dir. to store temp files
-    */
-   private static String TEMP_DIR = "/tmp";	// Linux
+  
+   private static String TEMP_DIR = "";	//Store temp files
  
    private static String DOT = "";	
 
-   /**
-    * The source of the graph written in dot language.
-    */
+   //The source code of the graph written in dot language, obtained from the 
+    //.dot file
 	private StringBuilder graph = new StringBuilder();
 
-   /**
-    * Constructor: creates a new GraphViz object that will contain
-    * a graph.
-    */
+   
    public GraphVizConnector() {
        TEMP_DIR = System.getProperty("user.dir");
        // 
@@ -49,6 +43,7 @@ public class GraphVizConnector
             SetPath();
         }
    }
+   //Sets the path of the GraphViz exe file 
    private void SetPath()
    {
        
@@ -65,25 +60,16 @@ public class GraphVizConnector
            DOT = "/usr/local/graphviz-2.38/bin/dot";
        }
    }
-   /**
-    * Returns the graph's source description in dot language.
-    * @return Source of the graph in dot language.
-    */
+   
+   //Returns the dot language graph source in String form
    public String getDotSource() {
       return graph.toString();
    }
 
-   /**
-    * Adds a string to the graph's source (without newline).
-    */
   
-   /**
-    * Returns the graph as an image in binary format.
-    * @param dot_source Source of the graph to be drawn.
-    * @param type Type of the output image to be produced, e.g.: gif, dot, fig, pdf, ps, svg, png.
-    * @return A byte array containing the image of the graph.
-    */
-   public byte[] getGraph(String dot_source, String type)
+   
+   //Converts graph to binary image
+   public byte[] ConvertGraphToBinImage(String dot_source, String type)
    {
       File dot;
       byte[] img_stream = null;
@@ -92,10 +78,10 @@ public class GraphVizConnector
          dot = writeDotSourceToFile(dot_source);
          if (dot != null)
          {
-            img_stream = get_img_stream(dot, type);
+            img_stream = GetImageStreamFromDot(dot, type);
             
             if (dot.delete() == false) 
-               System.err.println("Warning: " + dot.getAbsolutePath() + " could not be deleted!");
+               System.err.println(dot.getAbsolutePath() + " could not be deleted!");
             return img_stream;
          }
          return null;
@@ -103,12 +89,7 @@ public class GraphVizConnector
    }
  
 
-   /**
-    * Writes the graph's image in a file.
-    * @param img   A byte array containing the image of the graph.
-    * @param to    A File object to where we want to write.
-    * @return Success: 1, Failure: -1
-    */
+   //Writes tthe binary image byte array to an image file
    public int writeGraphToFile(byte[] img, File to)
    {
       try {
@@ -119,14 +100,8 @@ public class GraphVizConnector
       return 1;
    }
 
-   /**
-    * It will call the external dot program, and return the image in
-    * binary format.
-    * @param dot Source of the graph (in dot language).
-    * @param type Type of the output image to be produced, e.g.: gif, dot, fig, pdf, ps, svg, png.
-    * @return The image of the graph in .gif format.
-    */
-   private byte[] get_img_stream(File dot, String type)
+   //Call external GraphViz process to convert the dot file to an image
+   private byte[] GetImageStreamFromDot(File dot, String type)
    {
       File img;
       byte[] img_stream = null;
@@ -150,7 +125,7 @@ public class GraphVizConnector
          if( in != null ) in.close();
 
          if (img.delete() == false) 
-            System.err.println("Warning: " + img.getAbsolutePath() + " could not be deleted!");
+            System.err.println(img.getAbsolutePath() + " could not be deleted!");
       }
       catch (java.io.IOException ioe) {
          System.err.println("Error:    in I/O processing of tempfile in dir " + GraphVizConnector.TEMP_DIR+"\n");
@@ -165,12 +140,7 @@ public class GraphVizConnector
       return img_stream;
    }
 
-   /**
-    * Writes the source of the graph in a file, and returns the written file
-    * as a File object.
-    * @param str Source of the graph (in dot language).
-    * @return The file (as a File object) that contains the source of the graph.
-    */
+   //Returns a file that holds the dot source of graph written in dot language
    private File writeDotSourceToFile(String str) throws java.io.IOException
    {
       File temp;
@@ -188,12 +158,7 @@ public class GraphVizConnector
    }
 
   
-   /**
-    * Read a DOT graph from a text file.
-    * 
-    * @param input Input text file containing the DOT graph
-    * source.
-    */
+  //Reads a dot source of graph from text file
    public void readSource(String input)
    {
 	   StringBuilder sb = new StringBuilder();
@@ -215,6 +180,8 @@ public class GraphVizConnector
 	   
 	   this.graph = sb;
    }
+   
+   //Get address folder path
    private static String GetDotAddressFolderPath()
    {
         String dotAddress =  System.getProperty("user.dir");

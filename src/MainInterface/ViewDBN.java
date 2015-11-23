@@ -218,7 +218,7 @@ public static class ViewDBNInner  extends javax.swing.JPanel{
             gv.readSource(dotPath);
             try
             {
-                gv.writeGraphToFile( gv.getGraph( gv.getDotSource(), type ), out );
+                gv.writeGraphToFile( gv.ConvertGraphToBinImage( gv.getDotSource(), type ), out );
             }
             catch (Exception e) 
             {
