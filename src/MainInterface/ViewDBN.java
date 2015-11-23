@@ -5,7 +5,7 @@
  */
 package MainInterface;
 
-import Graphviz.GraphViz;
+import Graphviz.GraphVizConnector;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Desktop;
@@ -43,7 +43,7 @@ public static class ViewDBNInner  extends javax.swing.JPanel{
         JLabel label = new JLabel ("Structure of the Dynamic Bayesian Network");
         JLabel progressLabel = new JLabel("Generating DBN structure, this may take a few minutes.");
         private String DBNName = "";
-        GraphViz gv = new GraphViz();
+        GraphVizConnector gv = new GraphVizConnector();
         JButton viewBtn = new JButton("Open Image");
         Worker worker;
         JPanel centerPanel = new JPanel();
@@ -238,7 +238,7 @@ public static class ViewDBNInner  extends javax.swing.JPanel{
 
         if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) 
         {
-            GraphViz.ResetDOTInstallationPath( chooser.getSelectedFile().getAbsolutePath());
+            GraphVizConnector.ResetDOTInstallationPath( chooser.getSelectedFile().getAbsolutePath());
            // System.out.println("getCurrentDirectory(): " + chooser.getCurrentDirectory());
             //System.out.println("getSelectedFile() : " + chooser.getSelectedFile());
             return true;

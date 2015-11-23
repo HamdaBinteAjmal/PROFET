@@ -1,27 +1,5 @@
-// GraphViz.java - a simple API to call dot from Java programs
+// GraphVizConnector.java - a simple API to call dot from Java programs
 
-/*$Id$*/
-/*
- ******************************************************************************
- *                                                                            *
- *              (c) Copyright 2003 Laszlo Szathmary                           *
- *                                                                            *
- * This program is free software; you can redistribute it and/or modify it    *
- * under the terms of the GNU Lesser General Public License as published by   *
- * the Free Software Foundation; either version 2.1 of the License, or        *
- * (at your option) any later version.                                        *
- *                                                                            *
- * This program is distributed in the hope that it will be useful, but        *
- * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY *
- * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public    *
- * License for more details.                                                  *
- *                                                                            *
- * You should have received a copy of the GNU Lesser General Public License   *
- * along with this program; if not, write to the Free Software Foundation,    *
- * Inc., 675 Mass Ave, Cambridge, MA 02139, USA.                              *
- *                                                                            *
- ******************************************************************************
- */
 package Graphviz;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -37,54 +15,15 @@ import java.io.InputStreamReader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * <dl>
- * <dt>Purpose: GraphViz Java API
- * <dd>
- *
- * <dt>Description:
- * <dd> With this Java class you can simply call dot
- *      from your Java programs
- * <dt>Example usage:
- * <dd>
- * <pre>
- *    GraphViz gv = new GraphViz();
- *    gv.addln(gv.start_graph());
- *    gv.addln("A -> B;");
- *    gv.addln("A -> C;");
- *    gv.addln(gv.end_graph());
- *    System.out.println(gv.getDotSource());
- *
- *    String type = "gif";
- *    File out = new File("out." + type);   // out.gif in this example
- *    gv.writeGraphToFile( gv.getGraph( gv.getDotSource(), type ), out );
- * </pre>
- * </dd>
- *
- * </dl>
- *
- * @version v0.4, 2011/02/05 (February) -- Patch of Keheliya Gallaba is added. Now you
- * can specify the type of the output file: gif, dot, fig, pdf, ps, svg, png, etc.
- * @version v0.3, 2010/11/29 (November) -- Windows support + ability 
- * to read the graph from a text file
- * @version v0.2, 2010/07/22 (July) -- bug fix
- * @version v0.1, 2003/12/04 (December) -- first release
- * @author  Laszlo Szathmary (<a href="jabba.laci@gmail.com">jabba.laci@gmail.com</a>)
- */
-public class GraphViz
+
+public class GraphVizConnector
 {
    /**
-    * The dir. where temporary files will be created.
+    * The dir. to store temp files
     */
    private static String TEMP_DIR = "/tmp";	// Linux
- //  private static String TEMP_DIR = "c:/temp";	// Windows
-
-   /**
-    * Where is your dot program located? It will be called externally.
-    */
-   //private static String DOT = "/usr/bin/dot";	// Linux
-   //This is hardcoded and needs to be fixed, either needs to ask user or something 
-   private static String DOT = "";	// Windows
+ 
+   private static String DOT = "";	
 
    /**
     * The source of the graph written in dot language.
@@ -95,7 +34,7 @@ public class GraphViz
     * Constructor: creates a new GraphViz object that will contain
     * a graph.
     */
-   public GraphViz() {
+   public GraphVizConnector() {
        TEMP_DIR = System.getProperty("user.dir");
        // 
         TEMP_DIR = TEMP_DIR.replace("\\", "/");
@@ -137,24 +76,7 @@ public class GraphViz
    /**
     * Adds a string to the graph's source (without newline).
     */
-   public void add(String line) {
-      graph.append(line);
-   }
-
-   /**
-    * Adds a string to the graph's source (with newline).
-    */
-   public void addln(String line) {
-      graph.append(line + "\n");
-   }
-
-   /**
-    * Adds a newline to the graph's source.
-    */
-   public void addln() {
-      graph.append('\n');
-   }
-   
+  
    /**
     * Returns the graph as an image in binary format.
     * @param dot_source Source of the graph to be drawn.
@@ -180,18 +102,6 @@ public class GraphViz
       } catch (java.io.IOException ioe) { return null; }
    }
  
-
-   /**
-    * Writes the graph's image in a file.
-    * @param img   A byte array containing the image of the graph.
-    * @param file  Name of the file to where we want to write.
-    * @return Success: 1, Failure: -1
-    */
-   public int writeGraphToFile(byte[] img, String file)
-   {
-      File to = new File(file);
-      return writeGraphToFile(img, to);
-   }
 
    /**
     * Writes the graph's image in a file.
@@ -222,7 +132,7 @@ public class GraphViz
       byte[] img_stream = null;
 
       try {
-         img = File.createTempFile("graph_", "."+type, new File(GraphViz.TEMP_DIR));
+         img = File.createTempFile("graph_", "."+type, new File(GraphVizConnector.TEMP_DIR));
          Runtime rt = Runtime.getRuntime();
          
          // patch by Mike Chenault
@@ -243,7 +153,7 @@ public class GraphViz
             System.err.println("Warning: " + img.getAbsolutePath() + " could not be deleted!");
       }
       catch (java.io.IOException ioe) {
-         System.err.println("Error:    in I/O processing of tempfile in dir " + GraphViz.TEMP_DIR+"\n");
+         System.err.println("Error:    in I/O processing of tempfile in dir " + GraphVizConnector.TEMP_DIR+"\n");
          System.err.println("       or in calling external command");
          ioe.printStackTrace();
       }
@@ -265,7 +175,7 @@ public class GraphViz
    {
       File temp;
       try {
-         temp = File.createTempFile("graph_", ".dot.tmp", new File(GraphViz.TEMP_DIR));
+         temp = File.createTempFile("graph_", ".dot.tmp", new File(GraphVizConnector.TEMP_DIR));
          FileWriter fout = new FileWriter(temp);
          fout.write(str);
          fout.close();
@@ -277,22 +187,7 @@ public class GraphViz
       return temp;
    }
 
-   /**
-    * Returns a string that is used to start a graph.
-    * @return A string to open a graph.
-    */
-   public String start_graph() {
-      return "digraph G {";
-   }
-
-   /**
-    * Returns a string that is used to end a graph.
-    * @return A string to close a graph.
-    */
-   public String end_graph() {
-      return "}";
-   }
-
+  
    /**
     * Read a DOT graph from a text file.
     * 
@@ -349,9 +244,9 @@ public class GraphViz
                path = br.readLine();
                
            } catch (FileNotFoundException ex) {
-               Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+               Logger.getLogger(GraphVizConnector.class.getName()).log(Level.SEVERE, null, ex);
            } catch (IOException ex) {
-               Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+               Logger.getLogger(GraphVizConnector.class.getName()).log(Level.SEVERE, null, ex);
            }
            
        }
@@ -370,7 +265,7 @@ public class GraphViz
            }
            catch (IOException ex)
            {
-               Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+               Logger.getLogger(GraphVizConnector.class.getName()).log(Level.SEVERE, null, ex);
            }
        }
        FileWriter fw;
@@ -384,9 +279,9 @@ public class GraphViz
        } 
        catch (IOException ex) 
        {
-           Logger.getLogger(GraphViz.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(GraphVizConnector.class.getName()).log(Level.SEVERE, null, ex);
        }
   
    }
-} // end of class GraphViz
+} // end of class GraphVizConnector
 
