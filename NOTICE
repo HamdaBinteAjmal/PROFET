@@ -1,0 +1,85 @@
+	PROFET
+	Copyright 2015 (c) Data Mining and Machine Learning Group, National University of Ireland Galway
+
+	This product includes software product PROFET developed by the Data Mining and Machine Learning 
+	Group, National University of Ireland Galway (	http://datamining.it.nuigalway.ie/).
+
+
+	All source code in this project is written by Hamda binte Ajmal and Catherine Enright, except 
+	the following components:
+      
+	-> PROFET contains modified version of DragMath as its Equation Editor tool.
+	-> PROFET contains code derived in part from the AIMA code repository.
+	-> JMathPlot
+	-> ABCL
+   
+	The copyright information of the above components is given below:
+	------------------------------------------------------------------------------------------------
+	DRAGMATH http://www.dragmath.bham.ac.uk/
+	------------------------------------------------------------------------------------------------
+   
+    DragMath is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    DragMath is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with DragMath. If not, see <http://www.gnu.org/licenses/>.
+	
+	
+	------------------------------------------------------------------------------------------------
+	AIMA
+	------------------------------------------------------------------------------------------------
+	AIMA is an open source software.
+	------------------------------------------------------------------------------------------------
+  
+  	------------------------------------------------------------------------------------------------
+	JMathPlot "https://sites.google.com/site/mulabsltd/products/jmathplot"
+	------------------------------------------------------------------------------------------------
+	Redistribution and use in source and binary forms, with or without modification, are permitted 
+	provided that the following conditions are met:
+
+	Redistributions of source code must retain the above copyright notice, this list of conditions 
+	and the following disclaimer.  Redistributions in binary form must reproduce the above copyright
+	notice, this list of conditions and the following disclaimer in the documentation and/or other 
+	materials provided with the distribution. Neither the name of the µ-Labs nor the names of its 
+	contributors may be used to endorse or promote products derived from this software without 
+	specific prior written permission.
+	
+	Java to Lisp integration support is provided by ABCL Java library package, which is also an open
+	source software available from "https://common-lisp.net/project/armedbear/". ABCL is released 
+	under GNU Lesser GPL.
+   
+    ------------------------------------------------------------------------------------------------
+	ABCL https://common-lisp.net/project/armedbear/
+	------------------------------------------------------------------------------------------------
+	Armed Bear Common Lisp is distributed under the GNU General Public
+	License with classpath exception (described below).
+	
+	A copy of GNU General Public License (GPL) is included in this
+	distribution, in the file COPYING.
+	
+	Linking this software statically or dynamically with other modules is
+	making a combined work based on this software. Thus, the terms and
+	conditions of the GNU General Public License cover the whole
+	combination.
+	
+	As a special exception, the copyright holders of this software give
+	you permission to link this software with independent modules to
+	produce an executable, regardless of the license terms of these
+	independent modules, and to copy and distribute the resulting
+	executable under terms of your choice, provided that you also meet,
+	for each linked independent module, the terms and conditions of the
+	license of that module. An independent module is a module which is not
+	derived from or based on this software. If you modify this software,
+	you may extend this exception to your version of the software, but you
+	are not obligated to do so. If you do not wish to do so, delete this
+	exception statement from your version.
+
+	
+  
