@@ -307,7 +307,8 @@ public class EquationEditorPanel extends javax.swing.JPanel {
         jButtonClear = new javax.swing.JButton();
         jButtonSave = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(600, 500));
+        setMinimumSize(new java.awt.Dimension(800, 560));
+        setPreferredSize(new java.awt.Dimension(800, 560));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTooltip.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -1089,7 +1090,7 @@ public class EquationEditorPanel extends javax.swing.JPanel {
                 jButtonClearActionPerformed(evt);
             }
         });
-        add(jButtonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, -1, -1));
+        add(jButtonClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
 
         jButtonSave.setText("Save and Add Another Equation");
         jButtonSave.addActionListener(new java.awt.event.ActionListener() {
@@ -1097,7 +1098,7 @@ public class EquationEditorPanel extends javax.swing.JPanel {
                 jButtonSaveActionPerformed(evt);
             }
         });
-        add(jButtonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 460, -1, -1));
+        add(jButtonSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonUndoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonUndoMouseClicked
