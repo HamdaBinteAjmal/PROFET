@@ -105,9 +105,9 @@ public class Graphs extends javax.swing.JPanel {
         //details.actionPerformed(null);
         
         FileFilter filter = new FileNameExtensionFilter("csv file","csv");
-       // String path = System.getProperty("user.dir") + "\\Results\\Outputs";
-        //fc.setCurrentDirectory(new java.io.File(path));
-       // fc.setDialogTitle("Select the file you want to plot");
+       String path = System.getProperty("user.dir") + "\\Results\\Outputs";
+       fc.setCurrentDirectory(new java.io.File(path));
+        fc.setDialogTitle("Select the file you want to plot");
         fc.setFileFilter(filter);
         int returnVal = fc.showOpenDialog(this);
           
