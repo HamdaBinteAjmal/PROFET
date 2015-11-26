@@ -84,10 +84,25 @@ public class Graphs extends javax.swing.JPanel {
     
     private String Browse()
     {
+        /*
+        JFileChooser fc = new JFileChooser();
+                FileFilter filter = new FileNameExtensionFilter("csv file","csv");
+                fc.setFileFilter(filter);
+                int returnVal = fc.showOpenDialog(this);
+            
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    File file = fc.getSelectedFile();
+                    node.GetEvidence().SetFile(file);
+                fileLabel.setText(file.getName());
+                fileLabel.setForeground(Color.decode("#006400"));
+                this.repaint();
+                this.setVisible(true);
+                }
+        */
         JFileChooser fc = new JFileChooser();
         
-        Action details = fc.getActionMap().get("viewTypeDetails");
-        details.actionPerformed(null);
+        //Action details = fc.getActionMap().get("viewTypeDetails");
+        //details.actionPerformed(null);
         
         FileFilter filter = new FileNameExtensionFilter("csv file","csv");
         String path = System.getProperty("user.dir") + "\\Results\\Outputs";
