@@ -11,8 +11,8 @@ distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 KIND, either express or implied. See the License for the specific 
 language governing permissions and limitations under the License. 
 
-All source code in this project is written by Hamda binte Ajmal and 
-Catherine Enright, except the following components: 
+All source code in this project is written by Hamda binte Ajmal, 
+Catherine Enright and Michael Madden, except the following components: 
 • PROFET contains modified version of DragMath as its Equation Editor tool. 
 • PROFET contains code derived in part from the AIMA code repository. 
 • JMathPlot 
