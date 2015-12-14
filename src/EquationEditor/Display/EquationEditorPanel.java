@@ -1,17 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ * Copyright (C) 2010 Alex Billingsley, email@alexbillingsley.co.uk
+ * www.dragmath.bham.ac.uk 
+ * This file is part of DragMath.
+ * This file has been modified by Hamda Binte Ajmal to be added
+ * to the project PROFET.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
  */
+
+
+
+ 
+ 
+
 package EquationEditor.Display;
 import EquationEditor.Output.OutputFormat;
 import EquationEditor.Tree.BuildTree;
 import EquationEditor.Tree.MathObject;
-import EquationEditor.Tree.NaryOperator;
 import MainInterface.MainForm;
 import Nodes.EquationInfo;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.text.ParseException;
 import javax.swing.border.*;
 import javax.swing.*;
@@ -21,9 +39,6 @@ import java.awt.image.*;
 import javax.imageio.ImageIO;
 import java.util.Stack;
 import java.io.*;
-import java.net.URL;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.jdom.*;
 import org.jdom.input.*;
 /**
