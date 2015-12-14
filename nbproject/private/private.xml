@@ -4,10 +4,22 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/EquationEditorPanel.java</file>
-            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/DocListener.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/MseMotionSelectListener.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/TreeDisplay.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/CompConfig.xml</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/formats/lisp.xml</file>
             <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/ComListener.java</file>
             <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/RunInference/Graphs/Graphs.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/lang/en.xml</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/FocListener.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/DocListener.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Output/MathTran.xml</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/LanguageManager.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/Graphviz/GraphVizConnector.java</file>
             <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/AddComponent.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Output/OutputFormat.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Display/DrgmFileFilter.java</file>
+            <file>file:/C:/Users/Administrator.NUIG-1Z7HN12/Documents/NetBeansProjects/Profet/src/EquationEditor/Tree/Precedence.java</file>
         </group>
     </open-files>
 </project-private>
