@@ -1,7 +1,7 @@
 ;;; 
  ;; PROFET Copyright 2015 (c) Data Mining and Machine Learning Group,
  ;; National University of Ireland Galway.  
- ;; This file is a part of PROFET  
+ ;; This file is a part of AIMA Framework   
  ;;
  ;; Licensed under the Apache License, Version 2.0 (the "License");
  ;; you may not use this file except in compliance with the License.
