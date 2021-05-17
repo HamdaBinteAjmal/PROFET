@@ -27,9 +27,9 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
+//import sun.misc.BASE64Decoder;
+//import sun.misc.BASE64Encoder;
 
 /**
  *
@@ -37,8 +37,8 @@ import sun.misc.BASE64Encoder;
  */
 public class WSHelper {
     
-    static private BASE64Encoder encode = new BASE64Encoder();
-    static private BASE64Decoder decode = new BASE64Decoder();
+ //   static private  BASE64Encoder encode = new BASE64Encoder();
+//    static private BASE64Decoder decode = new BASE64Decoder();
     
     static public String OToS(Object obj) {
         
@@ -49,7 +49,8 @@ public class WSHelper {
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 ObjectOutputStream oos = new ObjectOutputStream(baos);
                 oos.writeObject(obj);
-                out = encode.encode(baos.toByteArray());
+               // out = encode.encode(baos.toByteArray());
+               out = Base64.getEncoder().encodeToString(baos.toByteArray());
             } catch (IOException e) {
                 e.printStackTrace();
                 return null;
@@ -67,7 +68,8 @@ public class WSHelper {
         if (str != null) {
             try {
                 ByteArrayInputStream bios = new
-                        ByteArrayInputStream(decode.decodeBuffer(str));
+                        ByteArrayInputStream(Base64.getDecoder().decode(str));
+                      //  ByteArrayInputStream(decode.decodeBuffer(str));
                 ObjectInputStream ois = new ObjectInputStream(bios);
                 out = ois.readObject();
             } catch (IOException e) {
