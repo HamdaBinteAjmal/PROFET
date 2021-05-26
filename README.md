@@ -23,9 +23,9 @@ Hamda B. Ajmal, Michael G. Madden and Catherine G. Enright, _PROFET: Constructio
 
 We would like to thank the developers of the following software components used in PROFET:
 1. The underlying algorithms for DBN structure construction and inference are derived in part from the AIMA codebase which is developed by Prof. Stuart Russell and his research group at the University of California, Berkeley.
-2. PROFET uses a modified version of DragMath as its equation editor tool, with permission from its authors.
-3. PROFET uses JMathPlot Java library to display the inferred data in the form of graphs.
-4. PROFET uses ABCL for Java to Lisp integration.
+2. PROFET uses a modified version of [DragMath](http://www.dragmath.bham.ac.uk/) as its equation editor tool, with permission from its authors.
+3. PROFET uses [JMathPlot](https://sites.google.com/site/mulabsltd/products/jmathplot) Java library to display the inferred data in the form of graphs.
+4. PROFET uses [ABCL](https://common-lisp.net/project/armedbear/) for Java to Lisp integration.
 
 **License**
 
